@@ -17,23 +17,28 @@ public class SoundController : MonoBehaviour
 
     }
 
-    public void PlayEcho(float distanceTravelled)
+    public void PlayEchoCall()
     {
-        switch (distanceTravelled)
+        print("Echo sent");
+    }
+
+    public void PlayEchoResponse(float distanceTravelled)
+    {
+        switch (MathF.Floor(distanceTravelled))
         {
-            case 0:
+            case 0f:
                 print("Echo heard with distance 0");
                 break;
 
-            case 1:
+            case 1f:
                 print("Echo heard with distance 1");
                 break;
 
-            case 2:
+            case 2f:
                 print("Echo heard with distance 2");
                 break;
 
-            case 3:
+            case 3f:
                 print("Echo heard with distance 3");
                 break;
 

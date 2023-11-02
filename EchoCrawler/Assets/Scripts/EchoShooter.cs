@@ -5,7 +5,6 @@ using UnityEngine;
 public class EchoHandler : MonoBehaviour
 {
     [SerializeField] private GameObject echoProjectile;
-    [SerializeField] private Transform echoParent;
 
 
     void Start()
@@ -18,7 +17,8 @@ public class EchoHandler : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(echoProjectile, transform.GetChild(0).transform.position, transform.rotation, echoParent);
+            GetComponent<SoundController>().PlayEchoCall();
+            Instantiate(echoProjectile, transform.GetChild(0).transform.position, transform.rotation, transform);
         }
     }
 }

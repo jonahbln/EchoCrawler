@@ -8,28 +8,28 @@ public class EchoProjectile : MonoBehaviour
 {
     private float timeSinceBirth = 0f;
     [SerializeField] private float projSpeed = 0.2f;
-    private SoundController playerSoundController;
+    private GameObject player;
     private Rigidbody2D rb;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        playerSoundController = FindObjectOfType<SoundController>();
+        player = transform.parent.gameObject;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        timeSinceBirth += Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("HIT");
-        if(collision.otherCollider.gameObject.CompareTag("Wall"))
+        if(collision.collider.gameObject.CompareTag("Wall"))
         {
-            playerSoundController.PlayEcho(timeSinceBirth);
+            player.GetComponent<SoundController>().PlayEchoResponse(Mathf.Round(timeSinceBirth));
+            Destroy(gameObject);
         }
     }
 
@@ -37,8 +37,7 @@ public class EchoProjectile : MonoBehaviour
 
     private void FixedUpdate()
     {
-        timeSinceBirth += 1f;
-
         rb.velocity = transform.up * projSpeed;
     }
+
 }
