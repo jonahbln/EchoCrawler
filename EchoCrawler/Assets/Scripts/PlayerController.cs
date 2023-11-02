@@ -1,29 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 1.0f; // Adjust this to control movement speed
-    private bool canMove = true;
+    public float rotationSpeed = 90f; // Rotation speed in degrees per second
+    public float tileMoveDistance = 1.0f; // Adjust this value to match your tile size
 
-    private void Update()
+    private Rigidbody2D rb;
+    private bool isRotatingLeft = false;
+    private bool isRotatingRight = false;
+
+    private void Start()
     {
-        if (canMove)
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void FixedUpdate()
+    {
+        // Get input from the player
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        // Rotate the player based on input
+        if (horizontalInput < 0 && !isRotatingLeft)
         {
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
+            isRotatingLeft = true;
+            isRotatingRight = false;
+            transform.Rotate(0, 0, 90); // Rotate 90 degrees left (A key)
+        }
+        else if (horizontalInput > 0 && !isRotatingRight)
+        {
+            isRotatingRight = true;
+            isRotatingLeft = false;
+            transform.Rotate(0, 0, -90); // Rotate 90 degrees right (D key)
+        }
 
-            Vector3 moveDirection = new Vector3(horizontalInput, verticalInput, 0);
+        if (horizontalInput == 0)
+        {
+            isRotatingLeft = false;
+            isRotatingRight = false;
+        }
 
-            if (moveDirection != Vector3.zero)
-            {
-                // Calculate the target position
-                Vector3 targetPosition = transform.position + moveDirection;
-
-                // Move the player to the target position with snapping to the grid
-                transform.position = new Vector3(Mathf.Round(targetPosition.x), Mathf.Round(targetPosition.y), 0);
-            }
+        // Move the player forward by a fixed tile distance when pressing W
+        if (verticalInput > 0)
+        {
+            Vector2 forwardDirection = transform.up;
+            Vector2 newPosition = rb.position + forwardDirection * tileMoveDistance;
+            rb.MovePosition(newPosition);
         }
     }
 }
