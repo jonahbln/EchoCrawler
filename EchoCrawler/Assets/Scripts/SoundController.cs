@@ -47,4 +47,9 @@ public class SoundController : MonoBehaviour
                 break;
         }
     }
+
+    public void PlayWallInteraction()
+    {
+        print("Wall hit");
+    }
 }
