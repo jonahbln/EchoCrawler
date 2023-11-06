@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -33,8 +34,18 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 forwardDirection = transform.up;
         Vector2 newPosition = rb.position + forwardDirection * tileMoveDistance;
-        rb.MovePosition(newPosition);
+
+        //rb.MovePosition(newPosition);
+
+        rb.velocity = forwardDirection * 2;
+        Invoke("stopMoving", 0.5f);
     }
+
+    private void stopMoving()
+    {
+        rb.velocity = Vector2.zero;
+    }
+
 
     private void RotateLeft()
     {
