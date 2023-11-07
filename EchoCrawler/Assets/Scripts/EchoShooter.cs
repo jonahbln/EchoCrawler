@@ -17,8 +17,8 @@ public class EchoHandler : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GetComponent<SoundController>().PlayEchoCall();
-            Instantiate(echoProjectile, transform.GetChild(0).transform.position, transform.rotation, transform);
+            print("SPACE");
+            Instantiate(echoProjectile, transform.GetChild(0).transform.position, transform.rotation);
         }
     }
 }

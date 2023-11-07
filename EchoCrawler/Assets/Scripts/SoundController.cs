@@ -19,7 +19,7 @@ public class SoundController : MonoBehaviour
 
     public void PlayEchoCall()
     {
-        print("Echo sent");
+        print("Echo sent sound");
     }
 
     public void PlayEchoResponse(float distanceTravelled)
@@ -27,29 +27,49 @@ public class SoundController : MonoBehaviour
         switch (MathF.Floor(distanceTravelled))
         {
             case 0f:
-                print("Echo heard with distance 0");
+                print("Echo recieved sound with distance 0");
                 break;
 
             case 1f:
-                print("Echo heard with distance 1");
+                print("Echo recieved sound with distance 1");
                 break;
 
             case 2f:
-                print("Echo heard with distance 2");
+                print("Echo recieved sound with distance 2");
                 break;
 
             case 3f:
-                print("Echo heard with distance 3");
+                print("Echo recieved sound with distance 3");
                 break;
 
             default:
-                print("Echo heard with distance unkown");
+                print("Echo recieved sound with distance unkown");
                 break;
         }
     }
 
     public void PlayWallInteraction()
     {
-        print("Wall hit");
+        print("Wall hit sound");
+    }
+
+    public void PlayPickup()
+    {
+        print("Pickup Sound");
+    }
+
+    public void PlayStart()
+    {
+        print("Start Sound");
+    }
+
+    public void PlayWin()
+    {
+        print("Win Sound");
+    }
+
+    public void PlayLoss()
+    {
+        print("Loss Sound");
     }
 }
