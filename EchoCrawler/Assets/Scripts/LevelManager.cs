@@ -21,13 +21,13 @@ public class LevelManager : MonoBehaviour
         doorRotation = player.transform.rotation.eulerAngles.z;
         if(doorRotation ==0)
         {
-            doorLocation.y += 1;
+            doorLocation.y -= 1;
         } else if(doorRotation == 90) 
         {
             doorLocation.x += 1;
         } else if (doorRotation == 180)
         {
-            doorLocation.y -= 1;
+            doorLocation.y += 1;
         } else if (doorRotation == 270)
         {
             doorLocation.x -= 1;
