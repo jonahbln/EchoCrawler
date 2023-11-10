@@ -10,12 +10,13 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private float playTime;
     [SerializeField] private GameObject doorPrefab;
     [SerializeField] private GameObject player;
+    private DoorController doorController;
     private SoundController soundController;
 
     // Start is called before the first frame update
     void Start()
     {
-        soundController = GetComponent<SoundController>();
+        soundController = FindObjectOfType<SoundController>();
 
         doorLocation = player.transform.position;
         doorRotation = player.transform.rotation.eulerAngles.z;
@@ -33,6 +34,7 @@ public class LevelManager : MonoBehaviour
             doorLocation.x -= 1;
         }
         Instantiate(doorPrefab, doorLocation, new Quaternion(0,0,0,0), transform);
+        doorController = FindObjectOfType<DoorController>();
 
         soundController.PlayStart();
     }
@@ -46,6 +48,7 @@ public class LevelManager : MonoBehaviour
     public void treasurePickup()
     {
         canExit = true;
+        doorController.itemPickup();
         print("Treasure picked up in: " + playTime + " seconds!");
     }
 
@@ -53,6 +56,8 @@ public class LevelManager : MonoBehaviour
     {
         print("Level won in: " + playTime + " seconds!");
         soundController.PlayWin();
+        player.GetComponent<PlayerController>().enabled = false;
+        player.GetComponent<EchoHandler>().enabled = false;
     }
 
     public void levelLost()

@@ -5,10 +5,15 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private AudioClip sendEchoSound;
+    [SerializeField] private AudioClip recieveEchoSound;
+    [SerializeField] private AudioClip itemPickupSound;
+    [SerializeField] private AudioClip winSound;
+    private AudioSource AudioSource;
+
     void Start()
     {
-
+        AudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -20,6 +25,7 @@ public class SoundController : MonoBehaviour
     public void PlayEchoCall()
     {
         print("Echo sent sound");
+        AudioSource.PlayClipAtPoint(sendEchoSound, transform.position);
     }
 
     public void PlayEchoResponse(float distanceTravelled)
@@ -28,18 +34,22 @@ public class SoundController : MonoBehaviour
         {
             case 0f:
                 print("Echo recieved sound with distance 0");
+                AudioSource.PlayClipAtPoint(recieveEchoSound, transform.position);
                 break;
 
             case 1f:
                 print("Echo recieved sound with distance 1");
+                AudioSource.PlayClipAtPoint(recieveEchoSound, transform.position);
                 break;
 
             case 2f:
                 print("Echo recieved sound with distance 2");
+                AudioSource.PlayClipAtPoint(recieveEchoSound, transform.position);
                 break;
 
             case 3f:
                 print("Echo recieved sound with distance 3");
+                AudioSource.PlayClipAtPoint(recieveEchoSound, transform.position);
                 break;
 
             default:
@@ -56,6 +66,7 @@ public class SoundController : MonoBehaviour
     public void PlayPickup()
     {
         print("Pickup Sound");
+        AudioSource.PlayClipAtPoint(itemPickupSound, transform.position);
     }
 
     public void PlayStart()
@@ -66,6 +77,7 @@ public class SoundController : MonoBehaviour
     public void PlayWin()
     {
         print("Win Sound");
+        AudioSource.PlayClipAtPoint(winSound, transform.position);
     }
 
     public void PlayLoss()

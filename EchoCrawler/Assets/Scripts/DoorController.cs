@@ -17,12 +17,17 @@ public class DoorController : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void itemPickup() {
+            GetComponent<BoxCollider2D>().isTrigger = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.collider.CompareTag("Player") && LevelManager.canExit)
+        if(collision.gameObject.CompareTag("Player"))
         {
             levelManager.levelWon();
-            Destroy(this, 0.05f);
+            Destroy(this, 0.1f);
         }
     }
+
 }
