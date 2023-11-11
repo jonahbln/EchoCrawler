@@ -41,6 +41,17 @@ public class PlayerController : MonoBehaviour
         Invoke("stopMoving", 0.5f);
     }
 
+    public void MoveBackwards()
+    {
+        Vector2 forwardDirection = transform.up;
+        Vector2 newPosition = rb.position + forwardDirection * tileMoveDistance;
+
+        //rb.MovePosition(newPosition);
+
+        rb.velocity = -forwardDirection;
+        Invoke("stopMoving", 0.5f);
+    }
+
     private void stopMoving()
     {
         rb.velocity = Vector2.zero;
