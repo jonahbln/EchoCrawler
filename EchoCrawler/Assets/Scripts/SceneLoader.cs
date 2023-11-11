@@ -12,4 +12,10 @@ public class SceneLoader : MonoBehaviour
         // Load the specified scene
         SceneManager.LoadScene(sceneToLoad);
     }
+
+    public void LoadSceneTwo(string scene)
+    {
+        // Load the specified scene
+        SceneManager.LoadScene(scene);
+    }
 }

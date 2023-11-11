@@ -55,9 +55,11 @@ public class LevelManager : MonoBehaviour
     public void levelWon()
     {
         print("Level won in: " + playTime + " seconds!");
+        GetComponent<SceneLoader>().LoadSceneTwo("QRCode");
         soundController.PlayWin();
         player.GetComponent<PlayerController>().enabled = false;
         player.GetComponent<EchoHandler>().enabled = false;
+        
     }
 
     public void levelLost()
