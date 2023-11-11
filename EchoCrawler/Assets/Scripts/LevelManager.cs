@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -55,7 +56,7 @@ public class LevelManager : MonoBehaviour
     public void levelWon()
     {
         print("Level won in: " + playTime + " seconds!");
-        GetComponent<SceneLoader>().LoadSceneTwo("QRCode");
+        SceneManager.LoadScene("QRCode");
         soundController.PlayWin();
         player.GetComponent<PlayerController>().enabled = false;
         player.GetComponent<EchoHandler>().enabled = false;
