@@ -12,7 +12,7 @@ public class PlayerCollisions : MonoBehaviour
             GetComponent<PlayerController>().MoveBackwards();
             GetComponent<SoundController>().PlayWallInteraction();
             Bonk++;
-            print(Bonk);
+            print("Collision #" + Bonk);
         }
     }
 }

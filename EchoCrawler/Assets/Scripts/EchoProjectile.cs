@@ -7,7 +7,7 @@ using UnityEngine;
 public class EchoProjectile : MonoBehaviour
 {
     private float timeSinceBirth = 0f;
-    [SerializeField] private float projSpeed = 0.2f;
+    [SerializeField] private float projSpeed = 1f;
     private SoundController soundController;
     private Rigidbody2D rb;
     private Vector2 upDirection;
@@ -18,6 +18,7 @@ public class EchoProjectile : MonoBehaviour
         soundController = FindObjectOfType<SoundController>();
         upDirection = transform.up;
         soundController.PlayEchoCall();
+        rb.velocity = upDirection * projSpeed;
     }
 
     // Update is called once per frame
@@ -30,16 +31,17 @@ public class EchoProjectile : MonoBehaviour
     {
         if(collision.collider.gameObject.CompareTag("Wall"))
         {
-            soundController.PlayEchoResponse(Mathf.Round(timeSinceBirth));
+            soundController.PlayEchoResponse(Mathf.Round(timeSinceBirth * projSpeed));
             Destroy(gameObject);
         }
     }
 
-    
-
-    private void FixedUpdate()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        rb.velocity = upDirection * projSpeed;
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            soundController.PlayEchoResponse(Mathf.Round(timeSinceBirth * projSpeed));
+            Destroy(gameObject);
+        }
     }
-
 }

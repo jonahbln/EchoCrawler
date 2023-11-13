@@ -9,32 +9,39 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private GameObject player;
 
+    private bool canMove;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        canMove = true;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if(canMove)
         {
-            MoveForward();
-            GetComponent<SoundController>().PlayMoveFoward();
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            RotateLeft();
-            GetComponent<SoundController>().PlayRotateLeft();
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            RotateRight();
-            GetComponent<SoundController>().PlayRotateRight();
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                MoveForward();
+
+            }
+            else if (Input.GetKeyDown(KeyCode.A))
+            {
+                RotateLeft();
+
+            }
+            else if (Input.GetKeyDown(KeyCode.D))
+            {
+                RotateRight();
+            }
         }
     }
 
     private void MoveForward()
     {
+        GetComponent<SoundController>().PlayMoveFoward();
+        canMove = false;
         Vector2 forwardDirection = transform.up;
         Vector2 newPosition = rb.position + forwardDirection * tileMoveDistance;
 
@@ -58,16 +65,19 @@ public class PlayerController : MonoBehaviour
     private void stopMoving()
     {
         rb.velocity = Vector2.zero;
+        canMove = true;
     }
 
 
     private void RotateLeft()
     {
+        GetComponent<SoundController>().PlayRotateLeft();
         transform.Rotate(0, 0, 90); // Rotate 90 degrees left (A key)
     }
 
     private void RotateRight()
     {
+        GetComponent<SoundController>().PlayRotateRight();
         transform.Rotate(0, 0, -90); // Rotate 90 degrees right (D key)
     }
 

@@ -11,16 +11,19 @@ public class SoundController : MonoBehaviour
     [SerializeField] private AudioClip recieveEchoSound2;
     [SerializeField] private AudioClip recieveEchoSound3;
     [SerializeField] private AudioClip hitWallSound;
+    [SerializeField] private AudioClip hitWallWarningSound;
     [SerializeField] private AudioClip movefowardSound;
     [SerializeField] private AudioClip rotateLeftSound;
     [SerializeField] private AudioClip rotateRightSound;
     [SerializeField] private AudioClip itemPickupSound;
     [SerializeField] private AudioClip winSound;
-    private AudioSource AudioSource;
+    [SerializeField] private AudioClip recieveEchoSoundDefault;
+    [SerializeField] private AudioSource AudioSource1;
+    [SerializeField] private AudioSource AudioSource2;
 
     void Start()
     {
-        AudioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -32,7 +35,7 @@ public class SoundController : MonoBehaviour
     public void PlayEchoCall()
     {
         print("Echo sent sound");
-        AudioSource.PlayClipAtPoint(sendEchoSound, transform.position);
+        AudioSource1.PlayOneShot(sendEchoSound);
     }
 
     public void PlayEchoResponse(float distanceTravelled)
@@ -41,26 +44,27 @@ public class SoundController : MonoBehaviour
         {
             case 0f:
                 print("Echo recieved sound with distance 0");
-                AudioSource.PlayClipAtPoint(recieveEchoSound0, transform.position);
+                AudioSource2.PlayOneShot(recieveEchoSound0 );
                 break;
 
             case 1f:
                 print("Echo recieved sound with distance 1");
-                AudioSource.PlayClipAtPoint(recieveEchoSound1, transform.position);
+                AudioSource2.PlayOneShot(recieveEchoSound1 );
                 break;
 
             case 2f:
                 print("Echo recieved sound with distance 2");
-                AudioSource.PlayClipAtPoint(recieveEchoSound2, transform.position);
+                AudioSource2.PlayOneShot(recieveEchoSound2 );
                 break;
 
             case 3f:
                 print("Echo recieved sound with distance 3");
-                AudioSource.PlayClipAtPoint(recieveEchoSound3, transform.position);
+                AudioSource2.PlayOneShot(recieveEchoSound3  );
                 break;
 
             default:
                 print("Echo recieved sound with distance unkown");
+                AudioSource2.PlayOneShot(recieveEchoSoundDefault  );
                 break;
         }
     }
@@ -68,24 +72,26 @@ public class SoundController : MonoBehaviour
     public void PlayWallInteraction()
     {
         print("Wall hit sound");
-        AudioSource.PlayClipAtPoint(hitWallSound, transform.position);
+        AudioSource2.Pause();
+        //AudioSource2.PlayOneShot(hitWallWarningSound);
+        AudioSource1.PlayOneShot(hitWallSound);
     }
 
     public void PlayPickup()
     {
         print("Pickup Sound");
-        AudioSource.PlayClipAtPoint(itemPickupSound, transform.position);
+        AudioSource1.PlayOneShot(itemPickupSound);
     }
 
     public void PlayStart()
     {
-        print("Start Sound");
+        print("Start");
     }
 
     public void PlayWin()
     {
         print("Win Sound");
-        AudioSource.PlayClipAtPoint(winSound, transform.position);
+        AudioSource1.PlayOneShot(winSound );
     }
 
     public void PlayLoss()
@@ -95,16 +101,16 @@ public class SoundController : MonoBehaviour
 
     public void PlayMoveFoward()
     {
-        AudioSource.PlayClipAtPoint(movefowardSound, transform.position);
+        AudioSource2.PlayOneShot(movefowardSound  );
     }
 
     public void PlayRotateLeft()
     {
-        AudioSource.PlayClipAtPoint(rotateLeftSound, transform.position);
+        AudioSource1.PlayOneShot(rotateLeftSound  );
     }
 
     public void PlayRotateRight()
     {
-        AudioSource.PlayClipAtPoint(rotateRightSound, transform.position);
+        AudioSource1.PlayOneShot(rotateRightSound  );
     }
 }
