@@ -6,7 +6,14 @@ using UnityEngine;
 public class SoundController : MonoBehaviour
 {
     [SerializeField] private AudioClip sendEchoSound;
-    [SerializeField] private AudioClip recieveEchoSound;
+    [SerializeField] private AudioClip recieveEchoSound0;
+    [SerializeField] private AudioClip recieveEchoSound1;
+    [SerializeField] private AudioClip recieveEchoSound2;
+    [SerializeField] private AudioClip recieveEchoSound3;
+    [SerializeField] private AudioClip hitWallSound;
+    [SerializeField] private AudioClip movefowardSound;
+    [SerializeField] private AudioClip rotateLeftSound;
+    [SerializeField] private AudioClip rotateRightSound;
     [SerializeField] private AudioClip itemPickupSound;
     [SerializeField] private AudioClip winSound;
     private AudioSource AudioSource;
@@ -34,22 +41,22 @@ public class SoundController : MonoBehaviour
         {
             case 0f:
                 print("Echo recieved sound with distance 0");
-                AudioSource.PlayClipAtPoint(recieveEchoSound, transform.position);
+                AudioSource.PlayClipAtPoint(recieveEchoSound0, transform.position);
                 break;
 
             case 1f:
                 print("Echo recieved sound with distance 1");
-                AudioSource.PlayClipAtPoint(recieveEchoSound, transform.position);
+                AudioSource.PlayClipAtPoint(recieveEchoSound1, transform.position);
                 break;
 
             case 2f:
                 print("Echo recieved sound with distance 2");
-                AudioSource.PlayClipAtPoint(recieveEchoSound, transform.position);
+                AudioSource.PlayClipAtPoint(recieveEchoSound2, transform.position);
                 break;
 
             case 3f:
                 print("Echo recieved sound with distance 3");
-                AudioSource.PlayClipAtPoint(recieveEchoSound, transform.position);
+                AudioSource.PlayClipAtPoint(recieveEchoSound3, transform.position);
                 break;
 
             default:
@@ -61,6 +68,7 @@ public class SoundController : MonoBehaviour
     public void PlayWallInteraction()
     {
         print("Wall hit sound");
+        AudioSource.PlayClipAtPoint(hitWallSound, transform.position);
     }
 
     public void PlayPickup()
@@ -83,5 +91,20 @@ public class SoundController : MonoBehaviour
     public void PlayLoss()
     {
         print("Loss Sound");
+    }
+
+    public void PlayMoveFoward()
+    {
+        AudioSource.PlayClipAtPoint(movefowardSound, transform.position);
+    }
+
+    public void PlayRotateLeft()
+    {
+        AudioSource.PlayClipAtPoint(rotateLeftSound, transform.position);
+    }
+
+    public void PlayRotateRight()
+    {
+        AudioSource.PlayClipAtPoint(rotateRightSound, transform.position);
     }
 }

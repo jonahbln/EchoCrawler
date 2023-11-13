@@ -19,14 +19,17 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             MoveForward();
+            GetComponent<SoundController>().PlayMoveFoward();
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             RotateLeft();
+            GetComponent<SoundController>().PlayRotateLeft();
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             RotateRight();
+            GetComponent<SoundController>().PlayRotateRight();
         }
     }
 

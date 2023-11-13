@@ -20875,10 +20875,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb5c5e1113d0194aa94fd3ef47d7016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendEchoSound: {fileID: 8300000, guid: f633ec91bfa1b554898efa9d959dfd37, type: 3}
-  recieveEchoSound: {fileID: 8300000, guid: 72852f8f9c261f342a329e3439521eb0, type: 3}
-  itemPickupSound: {fileID: 8300000, guid: f5fa7617a90180f4ba442555d57d1051, type: 3}
-  winSound: {fileID: 0}
+  sendEchoSound: {fileID: 8300000, guid: a8db293a67e164efc8b64f8abdc0801b, type: 3}
+  recieveEchoSound0: {fileID: 0}
+  recieveEchoSound1: {fileID: 8300000, guid: 60edf1c6ee3d248398138314cd944524, type: 3}
+  recieveEchoSound2: {fileID: 8300000, guid: e8fced4bdb9bc4d0686edae77490fa30, type: 3}
+  recieveEchoSound3: {fileID: 8300000, guid: f77e334c313564a1aa82965fd680d89a, type: 3}
+  hitWallSound: {fileID: 8300000, guid: bb0c8fbefb8e34abdb73142f7a4102e8, type: 3}
+  movefowardSound: {fileID: 8300000, guid: 6b9818809427441ffafcc4cf2da6ff34, type: 3}
+  rotateLeftSound: {fileID: 8300000, guid: 89b1d9d0f0fae477081bfb37d6b3aaf3, type: 3}
+  rotateRightSound: {fileID: 8300000, guid: 4bd6d32f0d3f443a2b4ff1ec84d75454, type: 3}
+  itemPickupSound: {fileID: 8300000, guid: 9641acf61f4184ce08a06aecee0ca6ca, type: 3}
+  winSound: {fileID: 8300000, guid: 9641acf61f4184ce08a06aecee0ca6ca, type: 3}
 --- !u!1001 &3107309189669040492
 PrefabInstance:
   m_ObjectHideFlags: 0

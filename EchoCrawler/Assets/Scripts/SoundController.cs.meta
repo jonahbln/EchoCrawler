@@ -3,7 +3,18 @@ guid: ceb5c5e1113d0194aa94fd3ef47d7016
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sendEchoSound: {fileID: 8300000, guid: a8db293a67e164efc8b64f8abdc0801b, type: 3}
+  - recieveEchoSound0: {instanceID: 0}
+  - recieveEchoSound1: {fileID: 8300000, guid: 60edf1c6ee3d248398138314cd944524, type: 3}
+  - recieveEchoSound2: {fileID: 8300000, guid: e8fced4bdb9bc4d0686edae77490fa30, type: 3}
+  - recieveEchoSound3: {fileID: 8300000, guid: f77e334c313564a1aa82965fd680d89a, type: 3}
+  - hitWallSound: {fileID: 8300000, guid: bb0c8fbefb8e34abdb73142f7a4102e8, type: 3}
+  - movefowardSound: {fileID: 8300000, guid: 6b9818809427441ffafcc4cf2da6ff34, type: 3}
+  - rotateLeftSound: {fileID: 8300000, guid: 89b1d9d0f0fae477081bfb37d6b3aaf3, type: 3}
+  - rotateRightSound: {fileID: 8300000, guid: 4bd6d32f0d3f443a2b4ff1ec84d75454, type: 3}
+  - itemPickupSound: {fileID: 8300000, guid: 9641acf61f4184ce08a06aecee0ca6ca, type: 3}
+  - winSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
