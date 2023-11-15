@@ -11,7 +11,6 @@ public class SoundController : MonoBehaviour
     [SerializeField] private AudioClip recieveEchoSound2;
     [SerializeField] private AudioClip recieveEchoSound3;
     [SerializeField] private AudioClip hitWallSound;
-    [SerializeField] private AudioClip hitWallWarningSound;
     [SerializeField] private AudioClip movefowardSound;
     [SerializeField] private AudioClip rotateLeftSound;
     [SerializeField] private AudioClip rotateRightSound;
@@ -72,15 +71,13 @@ public class SoundController : MonoBehaviour
     public void PlayWallInteraction()
     {
         print("Wall hit sound");
-        AudioSource2.Pause();
-        //AudioSource2.PlayOneShot(hitWallWarningSound);
-        AudioSource1.PlayOneShot(hitWallSound);
+        AudioSource2.PlayOneShot(hitWallSound);
     }
 
     public void PlayPickup()
     {
         print("Pickup Sound");
-        AudioSource1.PlayOneShot(itemPickupSound);
+        AudioSource2.PlayOneShot(itemPickupSound);
     }
 
     public void PlayStart()
@@ -91,7 +88,7 @@ public class SoundController : MonoBehaviour
     public void PlayWin()
     {
         print("Win Sound");
-        AudioSource1.PlayOneShot(winSound );
+        AudioSource2.PlayOneShot(winSound );
     }
 
     public void PlayLoss()
@@ -101,16 +98,16 @@ public class SoundController : MonoBehaviour
 
     public void PlayMoveFoward()
     {
-        AudioSource2.PlayOneShot(movefowardSound  );
+        AudioSource1.PlayOneShot(movefowardSound);
     }
 
     public void PlayRotateLeft()
     {
-        AudioSource1.PlayOneShot(rotateLeftSound  );
+        AudioSource1.PlayOneShot(rotateLeftSound);
     }
 
     public void PlayRotateRight()
     {
-        AudioSource1.PlayOneShot(rotateRightSound  );
+        AudioSource1.PlayOneShot(rotateRightSound);
     }
 }

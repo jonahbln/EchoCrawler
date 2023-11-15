@@ -9,12 +9,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private GameObject player;
 
-    private bool canMove;
+    public static bool canMove = true;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        canMove = true;
     }
 
     private void Update()
@@ -42,6 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         GetComponent<SoundController>().PlayMoveFoward();
         canMove = false;
+        EchoHandler.canEcho = false;
         Vector2 forwardDirection = transform.up;
         Vector2 newPosition = rb.position + forwardDirection * tileMoveDistance;
 
@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         canMove = true;
+        EchoHandler.canEcho = true;
     }
 
 

@@ -20715,6 +20715,7 @@ GameObject:
   - component: {fileID: 2121109406}
   - component: {fileID: 2121109408}
   - component: {fileID: 2121109407}
+  - component: {fileID: 2121109410}
   - component: {fileID: 2121109409}
   m_Layer: 0
   m_Name: Player
@@ -20875,7 +20876,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &2121109404
 MonoBehaviour:
@@ -20915,9 +20916,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0e36beb217d624b41bba318d52fbeef2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.503
+  m_Volume: 0.352
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -21024,8 +21025,7 @@ MonoBehaviour:
   recieveEchoSound1: {fileID: 8300000, guid: 33fad3f97a0c87d49882b419dc84582e, type: 3}
   recieveEchoSound2: {fileID: 8300000, guid: 80016d6ac2b0d4f47930322cdae0ddc4, type: 3}
   recieveEchoSound3: {fileID: 8300000, guid: 173393e07bd2a6a40887299258632934, type: 3}
-  hitWallSound: {fileID: 8300000, guid: 1942f22abd3244098a109d63d70aede7, type: 3}
-  hitWallWarningSound: {fileID: 8300000, guid: d7c7cd46b0a8f41178dda0225607298d, type: 3}
+  hitWallSound: {fileID: 8300000, guid: 61bac99fa819485438a8b5d96dd085a2, type: 3}
   movefowardSound: {fileID: 8300000, guid: 9f8985f7c87c1404fad93da691d3412b, type: 3}
   rotateLeftSound: {fileID: 8300000, guid: da77fa69aa663b948a53b7111f1fc64d, type: 3}
   rotateRightSound: {fileID: 8300000, guid: 7fe4962ec6c43c0478f8e0f5de929ba1, type: 3}
@@ -21034,6 +21034,102 @@ MonoBehaviour:
   recieveEchoSoundDefault: {fileID: 8300000, guid: f77e334c313564a1aa82965fd680d89a, type: 3}
   AudioSource1: {fileID: 2121109407}
   AudioSource2: {fileID: 2121109407}
+--- !u!82 &2121109410
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121109398}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &3107309189669040492
 PrefabInstance:
   m_ObjectHideFlags: 0

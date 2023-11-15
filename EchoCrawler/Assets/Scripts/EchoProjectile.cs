@@ -32,6 +32,8 @@ public class EchoProjectile : MonoBehaviour
         if(collision.collider.gameObject.CompareTag("Wall"))
         {
             soundController.PlayEchoResponse(Mathf.Round(timeSinceBirth * projSpeed));
+            EchoHandler.canEcho = true;
+            PlayerController.canMove = true;
             Destroy(gameObject);
         }
     }
@@ -41,6 +43,8 @@ public class EchoProjectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             soundController.PlayEchoResponse(Mathf.Round(timeSinceBirth * projSpeed));
+            EchoHandler.canEcho = true;
+            PlayerController.canMove = true;
             Destroy(gameObject);
         }
     }

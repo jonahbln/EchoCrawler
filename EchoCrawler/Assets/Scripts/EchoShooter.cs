@@ -6,7 +6,7 @@ public class EchoHandler : MonoBehaviour
 {
     [SerializeField] private GameObject echoProjectile;
 
-    private bool canEcho = true;
+    public static bool canEcho = true;
 
 
     void Start()
@@ -21,12 +21,7 @@ public class EchoHandler : MonoBehaviour
         {
             Instantiate(echoProjectile, transform.GetChild(0).transform.position, transform.rotation);
             canEcho = false;
-            Invoke("EchoDelay", 1f);
+            PlayerController.canMove = false;
         }
-    }
-
-    private void EchoDelay() 
-    {
-        canEcho = true;
     }
 }
