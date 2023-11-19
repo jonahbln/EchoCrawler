@@ -39,7 +39,7 @@ public class EchoProjectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            Invoke("WallHit", 1/projSpeed);
+            Invoke("WallHit", 1f/projSpeed);
         }
     }
 

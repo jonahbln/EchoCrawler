@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "EchoCrawler.sln"
+    "dotnet.defaultSolution": "EchoCrawler.sln",
+    "dotnet.preferCSharpExtension": true
 }
