@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 158.73264, y: -104.352844}
-  m_SizeDelta: {x: 573.028, y: 193.3253}
+  m_AnchoredPosition: {x: 103.29935, y: -104.352844}
+  m_SizeDelta: {x: 462.1614, y: 193.3253}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &49554170
 MonoBehaviour:
@@ -576,8 +576,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Wait a second between each action\n\nW - Move Foward\nA  - Rotate to the
-    Left 90*\nD  - Rotate to the Right 90*\nSpace - Send Echo\n\n "
+  m_Text: "Wait a second between each action\n\nLeft Shift - Move Foward\nLeft  -
+    Rotate to the Left 90*\nRight  - Rotate to the Right 90*\nSpace - Send Echo\n\n "
 --- !u!222 &895806235
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -20,17 +20,17 @@ public class PlayerController : MonoBehaviour
     {
         if(canMove)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 MoveForward();
 
             }
-            else if (Input.GetKeyDown(KeyCode.A))
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 RotateLeft();
 
             }
-            else if (Input.GetKeyDown(KeyCode.D))
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 RotateRight();
             }
