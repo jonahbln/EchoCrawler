@@ -18561,6 +18561,7 @@ MonoBehaviour:
   playTime: 0
   doorPrefab: {fileID: 1066391832713692648, guid: 7ebc78fba1374854d9a67cb22b65bb4a, type: 3}
   player: {fileID: 1197746616}
+  LevelToLoad: Level3
 --- !u!4 &1464174266
 Transform:
   m_ObjectHideFlags: 0

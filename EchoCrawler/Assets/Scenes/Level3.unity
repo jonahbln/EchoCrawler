@@ -18495,6 +18495,7 @@ MonoBehaviour:
   playTime: 0
   doorPrefab: {fileID: 1066391832713692648, guid: 7ebc78fba1374854d9a67cb22b65bb4a, type: 3}
   player: {fileID: 2121109398}
+  LevelToLoad: QRCode
 --- !u!4 &1464174266
 Transform:
   m_ObjectHideFlags: 0
@@ -21144,11 +21145,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8680954225810744173, guid: 96b4a0a397f283a4f865b25327d2041d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: 19.41
       objectReference: {fileID: 0}
     - target: {fileID: 8680954225810744173, guid: 96b4a0a397f283a4f865b25327d2041d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -8.49
       objectReference: {fileID: 0}
     - target: {fileID: 8680954225810744173, guid: 96b4a0a397f283a4f865b25327d2041d, type: 3}
       propertyPath: m_LocalPosition.z

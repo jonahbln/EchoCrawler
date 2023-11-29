@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private float playTime;
     [SerializeField] private GameObject doorPrefab;
     [SerializeField] private GameObject player;
+    [SerializeField] private string LevelToLoad;
     private DoorController doorController;
     private SoundController soundController;
 
@@ -56,7 +57,7 @@ public class LevelManager : MonoBehaviour
     public void levelWon()
     {
         print("Level won in: " + playTime + " seconds!");
-        SceneManager.LoadScene("QRCode");
+        SceneManager.LoadScene(LevelToLoad);
         soundController.PlayWin();
         player.GetComponent<PlayerController>().enabled = false;
         player.GetComponent<EchoHandler>().enabled = false;
