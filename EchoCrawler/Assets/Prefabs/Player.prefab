@@ -512,7 +512,7 @@ MonoBehaviour:
   rotateLeftSound: {fileID: 8300000, guid: da77fa69aa663b948a53b7111f1fc64d, type: 3}
   rotateRightSound: {fileID: 8300000, guid: 7fe4962ec6c43c0478f8e0f5de929ba1, type: 3}
   itemPickupSound: {fileID: 8300000, guid: 9641acf61f4184ce08a06aecee0ca6ca, type: 3}
-  winSound: {fileID: 8300000, guid: 9641acf61f4184ce08a06aecee0ca6ca, type: 3}
+  winSound: {fileID: 8300000, guid: f05c77bfe6c284a88a37b04d0bc073f3, type: 3}
   recieveEchoSoundDefault: {fileID: 8300000, guid: 33fad3f97a0c87d49882b419dc84582e, type: 3}
   AudioSource1: {fileID: 3854293629056526518}
   AudioSource2: {fileID: 3854293629056526518}
