@@ -29,4 +29,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/QRCode.unity
     guid: c83e330f0da42414b84b781899d02e46
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 1e3b1e19329cacb4399674c63618a5b3, type: 2}
