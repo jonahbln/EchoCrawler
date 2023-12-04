@@ -11,6 +11,11 @@ public class PlayerController : MonoBehaviour
 
     public static bool canMove = true;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -62,7 +67,7 @@ public class PlayerController : MonoBehaviour
         Invoke("stopMoving", 0.5f);
     }
 
-    private void stopMoving()
+    public void stopMoving()
     {
         rb.velocity = Vector2.zero;
         canMove = true;

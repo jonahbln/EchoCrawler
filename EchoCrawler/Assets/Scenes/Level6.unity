@@ -2466,11 +2466,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7d9f91e92a5dec49991866223949d88, type: 3}
---- !u!1 &790972777 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1038150818869330424, guid: e7d9f91e92a5dec49991866223949d88, type: 3}
-  m_PrefabInstance: {fileID: 790972776}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1347523232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,7 +2700,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playTime: 0
   doorPrefab: {fileID: 1066391832713692648, guid: 7ebc78fba1374854d9a67cb22b65bb4a, type: 3}
-  player: {fileID: 790972777}
   LevelToLoad: QRCode
 --- !u!4 &1464174266
 Transform:
@@ -2751,7 +2745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c63927ea9297458090009e62dcd7735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: QRCode
+  sceneToLoad: 
 --- !u!4 &1571503708
 Transform:
   m_ObjectHideFlags: 0
