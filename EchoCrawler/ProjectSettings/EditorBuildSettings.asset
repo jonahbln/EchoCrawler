@@ -15,19 +15,25 @@ EditorBuildSettings:
     path: Assets/Scenes/Info.unity
     guid: 8c3e6caf2da90d744b29e0bfcb5e7d8e
   - enabled: 1
-    path: Assets/Scenes/Level0 2.unity
+    path: Assets/Scenes/Level2.unity
     guid: 3a5bb1b76930b494eb28c831642ace7e
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/Level3.unity
     guid: 550fbf3e2f4bc034eaf4f4d86e363dbe
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
+    path: Assets/Scenes/Level4.unity
     guid: cc168af5d07a7134aa37ca3d119394ce
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
+    path: Assets/Scenes/Level5.unity
     guid: 6430a794c4fd4fa4298857b7363b830b
   - enabled: 1
     path: Assets/Scenes/QRCode.unity
     guid: c83e330f0da42414b84b781899d02e46
+  - enabled: 1
+    path: Assets/Scenes/Level0.unity
+    guid: c0ad54116880aff4885514534bc73953
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 3ff57d0c98d7f154b9dd7c58ec44fa09
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 1e3b1e19329cacb4399674c63618a5b3, type: 2}

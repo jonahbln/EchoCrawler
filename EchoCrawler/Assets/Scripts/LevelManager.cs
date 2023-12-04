@@ -39,6 +39,9 @@ public class LevelManager : MonoBehaviour
         doorController = FindObjectOfType<DoorController>();
 
         soundController.PlayStart();
+
+        player.GetComponent<PlayerController>().enabled = true;
+        player.GetComponent<EchoHandler>().enabled = true;
     }
 
     // Update is called once per frame
@@ -57,11 +60,9 @@ public class LevelManager : MonoBehaviour
     public void levelWon()
     {
         print("Level won in: " + playTime + " seconds!");
-        SceneManager.LoadScene(LevelToLoad);
         soundController.PlayWin();
-        player.GetComponent<PlayerController>().enabled = false;
-        player.GetComponent<EchoHandler>().enabled = false;
-        
+        SceneManager.LoadScene(LevelToLoad);
+               
     }
 
     public void levelLost()
