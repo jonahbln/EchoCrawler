@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,64 +28,50 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                MoveForward();
+
+                DisableInput();
+                if (!PlayerCollisions.touchingWall)
+                {
+                    rb.MovePosition(transform.position + transform.up);
+                    GetComponent<SoundController>().PlayMoveFoward();
+                }
+                else
+                {
+                    GetComponent<SoundController>().PlayWallInteraction();
+                }
+                Invoke("EnableInput", .5f);
 
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                RotateLeft();
+                DisableInput();
+                GetComponent<SoundController>().PlayRotateLeft();
+                transform.Rotate(0, 0, 90);
+                Invoke("EnableInput", .5f);
 
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                RotateRight();
+                DisableInput();
+                GetComponent<SoundController>().PlayRotateRight();
+                transform.Rotate(0, 0, -90);
+                Invoke("EnableInput", .5f);
+
             }
         }
-    }
 
-    private void MoveForward()
+        }
+    
+
+    private void DisableInput()
     {
-        GetComponent<SoundController>().PlayMoveFoward();
         canMove = false;
         EchoHandler.canEcho = false;
-        Vector2 forwardDirection = transform.up;
-        Vector2 newPosition = rb.position + forwardDirection * tileMoveDistance;
-
-        //rb.MovePosition(newPosition);
-
-        rb.velocity = forwardDirection * 2;
-        Invoke("stopMoving", 0.5f);
     }
 
-    public void MoveBackwards()
+    private void EnableInput()
     {
-        Vector2 forwardDirection = transform.up;
-        Vector2 newPosition = rb.position + forwardDirection * tileMoveDistance;
-
-        //rb.MovePosition(newPosition);
-
-        rb.velocity = -forwardDirection;
-        Invoke("stopMoving", 0.5f);
-    }
-
-    public void stopMoving()
-    {
-        rb.velocity = Vector2.zero;
         canMove = true;
         EchoHandler.canEcho = true;
     }
-
-
-    private void RotateLeft()
-    {
-        GetComponent<SoundController>().PlayRotateLeft();
-        transform.Rotate(0, 0, 90); // Rotate 90 degrees left (A key)
-    }
-
-    private void RotateRight()
-    {
-        GetComponent<SoundController>().PlayRotateRight();
-        transform.Rotate(0, 0, -90); // Rotate 90 degrees right (D key)
-    }
-
 }

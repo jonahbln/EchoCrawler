@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         soundController = FindObjectOfType<SoundController>();
 
-        player.GetComponent<PlayerController>().stopMoving();
+        //player.GetComponent<PlayerController>().stopMoving();
 
         player.transform.rotation = startRotation;
         player.transform.position = startPosition;

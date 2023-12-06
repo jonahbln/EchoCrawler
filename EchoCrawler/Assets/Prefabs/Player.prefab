@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3624296122395554704}
   - component: {fileID: 8971973312733345526}
+  - component: {fileID: 3063289375165685348}
+  - component: {fileID: 8441303875559759197}
   m_Layer: 0
   m_Name: pointer
   m_TagString: Untagged
@@ -26,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 594912901314053108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: -0, y: 0.515, z: 0}
   m_LocalScale: {x: 0.05, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84,6 +86,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &3063289375165685348
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594912901314053108}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &8441303875559759197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594912901314053108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfd3f3720b9f466bb3ce78e6659376b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1038150818869330424
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,7 +157,6 @@ GameObject:
   - component: {fileID: 4143142875506437521}
   - component: {fileID: 2063981273287986381}
   - component: {fileID: 1976338106537121552}
-  - component: {fileID: 6182072720223361522}
   - component: {fileID: 7025435095455096535}
   - component: {fileID: 3854293629056526518}
   - component: {fileID: 6938961344345706796}
@@ -120,7 +178,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 4.5, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3624296122395554704}
@@ -221,7 +279,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -235,7 +293,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &2063981273287986381
 Rigidbody2D:
@@ -277,19 +335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   echoProjectile: {fileID: 2769298885114974929, guid: 455dacbf0ed79a144941359b86f1ce7f, type: 3}
---- !u!114 &6182072720223361522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038150818869330424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddfd3f3720b9f466bb3ce78e6659376b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bonk: 0
 --- !u!81 &7025435095455096535
 AudioListener:
   m_ObjectHideFlags: 0
@@ -509,8 +554,8 @@ MonoBehaviour:
   recieveEchoSound3: {fileID: 8300000, guid: 33fad3f97a0c87d49882b419dc84582e, type: 3}
   hitWallSound: {fileID: 8300000, guid: 78aef513b507d3944a1b1654ef0b0cf8, type: 3}
   movefowardSound: {fileID: 8300000, guid: 9f8985f7c87c1404fad93da691d3412b, type: 3}
-  rotateLeftSound: {fileID: 8300000, guid: da77fa69aa663b948a53b7111f1fc64d, type: 3}
-  rotateRightSound: {fileID: 8300000, guid: 7fe4962ec6c43c0478f8e0f5de929ba1, type: 3}
+  rotateLeftSound: {fileID: 8300000, guid: c48050d9345e089479ba621c25c23eb7, type: 3}
+  rotateRightSound: {fileID: 8300000, guid: bdc2ae96c03eb9b4c992c15a414a00d0, type: 3}
   itemPickupSound: {fileID: 8300000, guid: 9641acf61f4184ce08a06aecee0ca6ca, type: 3}
   winSound: {fileID: 8300000, guid: f05c77bfe6c284a88a37b04d0bc073f3, type: 3}
   recieveEchoSoundDefault: {fileID: 8300000, guid: 33fad3f97a0c87d49882b419dc84582e, type: 3}

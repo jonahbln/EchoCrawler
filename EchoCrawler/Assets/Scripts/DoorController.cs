@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     private LevelManager levelManager;
+    private bool canExit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +19,12 @@ public class DoorController : MonoBehaviour
     }
 
     public void itemPickup() {
-            GetComponent<BoxCollider2D>().isTrigger = true;
+        canExit = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player") && canExit)
         {
             levelManager.levelWon();
             Destroy(this, 0.1f);
