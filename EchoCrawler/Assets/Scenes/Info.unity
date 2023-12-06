@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 103.29935, y: -104.352844}
-  m_SizeDelta: {x: 462.1614, y: 193.3253}
+  m_AnchoredPosition: {x: 103.29935, y: -175}
+  m_SizeDelta: {x: 462.1614, y: 330.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &49554170
 MonoBehaviour:
@@ -193,10 +193,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Listen to the sounds to traverse through the Maze. Send echos to determine
-    how far you are from the wall in from of you. The longer it takes to hear the
-    echo, the further away the wall is.\n\nFind the hidden treasure which makes a
-    bubbling noise when you get close\n\nExit the Maze through the same way you entered\n "
+  m_Text: 'Listen closely to the sounds as you traverse through the Maze. Send echos
+    to determine how far you are from the wall in from of you. The longer it takes
+    to hear the echo, the further away the wall is.
+
+
+    Find the hidden treasure
+    which makes a bubbling sound when you get close. Once the retrieved, exit the
+    Maze through the same way you entered. The exit will make a different sound when
+    echoed.'
 --- !u!222 &49554171
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -540,8 +545,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36.444, y: -81}
-  m_SizeDelta: {x: 328.4506, y: 146.6196}
+  m_AnchoredPosition: {x: 36.444, y: -241}
+  m_SizeDelta: {x: 328.4506, y: 455.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &895806234
 MonoBehaviour:
@@ -576,8 +581,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Wait a second between each action\n\nLeft Shift - Move Foward\nLeft  -
-    Rotate to the Left 90*\nRight  - Rotate to the Right 90*\nSpace - Send Echo\n\n "
+  m_Text: "Input is disabled while you are moving or waiting for an echo pulse\n\nLeft
+    Shift - Move Foward\nLeft Arrow  - Rotate to the Left 90*\nRight Arrow  - Rotate
+    to the Right 90*\nSpace - Send Echo\n\n "
 --- !u!222 &895806235
 CanvasRenderer:
   m_ObjectHideFlags: 0
