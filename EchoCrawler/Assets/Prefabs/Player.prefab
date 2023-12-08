@@ -548,16 +548,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sendEchoSound: {fileID: 8300000, guid: 9784f730f7bed3e48b6295a7e94963ac, type: 3}
-  recieveEchoSound0: {fileID: 8300000, guid: 33fad3f97a0c87d49882b419dc84582e, type: 3}
-  recieveEchoSound1: {fileID: 8300000, guid: 33fad3f97a0c87d49882b419dc84582e, type: 3}
-  recieveEchoSound2: {fileID: 8300000, guid: 33fad3f97a0c87d49882b419dc84582e, type: 3}
-  recieveEchoSound3: {fileID: 8300000, guid: 33fad3f97a0c87d49882b419dc84582e, type: 3}
+  recieveEchoSoundDefault: {fileID: 8300000, guid: 33fad3f97a0c87d49882b419dc84582e, type: 3}
+  recieveEchoSoundDoor: {fileID: 8300000, guid: 18267a6ca9c88aa47904b005bc6bb55e, type: 3}
   hitWallSound: {fileID: 8300000, guid: 78aef513b507d3944a1b1654ef0b0cf8, type: 3}
   movefowardSound: {fileID: 8300000, guid: 9f8985f7c87c1404fad93da691d3412b, type: 3}
   rotateLeftSound: {fileID: 8300000, guid: c48050d9345e089479ba621c25c23eb7, type: 3}
   rotateRightSound: {fileID: 8300000, guid: bdc2ae96c03eb9b4c992c15a414a00d0, type: 3}
   itemPickupSound: {fileID: 8300000, guid: 9641acf61f4184ce08a06aecee0ca6ca, type: 3}
   winSound: {fileID: 8300000, guid: f05c77bfe6c284a88a37b04d0bc073f3, type: 3}
-  recieveEchoSoundDefault: {fileID: 8300000, guid: 33fad3f97a0c87d49882b419dc84582e, type: 3}
   AudioSource1: {fileID: 3854293629056526518}
   AudioSource2: {fileID: 3854293629056526518}

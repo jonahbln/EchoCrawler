@@ -6,17 +6,14 @@ using UnityEngine;
 public class SoundController : MonoBehaviour
 {
     [SerializeField] private AudioClip sendEchoSound;
-    [SerializeField] private AudioClip recieveEchoSound0;
-    [SerializeField] private AudioClip recieveEchoSound1;
-    [SerializeField] private AudioClip recieveEchoSound2;
-    [SerializeField] private AudioClip recieveEchoSound3;
+    [SerializeField] private AudioClip recieveEchoSoundDefault;
+    [SerializeField] private AudioClip recieveEchoSoundDoor;
     [SerializeField] private AudioClip hitWallSound;
     [SerializeField] private AudioClip movefowardSound;
     [SerializeField] private AudioClip rotateLeftSound;
     [SerializeField] private AudioClip rotateRightSound;
     [SerializeField] private AudioClip itemPickupSound;
     [SerializeField] private AudioClip winSound;
-    [SerializeField] private AudioClip recieveEchoSoundDefault;
     [SerializeField] private AudioSource AudioSource1;
     [SerializeField] private AudioSource AudioSource2;
 
@@ -37,34 +34,16 @@ public class SoundController : MonoBehaviour
         AudioSource1.PlayOneShot(sendEchoSound);
     }
 
-    public void PlayEchoResponse(float distanceTravelled)
+    public void PlayEchoResponse(bool door)
     {
-        switch (MathF.Floor(distanceTravelled))
+        if(door)
         {
-            case 0f:
-                print("Echo recieved sound with distance 0");
-                AudioSource2.PlayOneShot(recieveEchoSound0 );
-                break;
-
-            case 1f:
-                print("Echo recieved sound with distance 1");
-                AudioSource2.PlayOneShot(recieveEchoSound1 );
-                break;
-
-            case 2f:
-                print("Echo recieved sound with distance 2");
-                AudioSource2.PlayOneShot(recieveEchoSound2 );
-                break;
-
-            case 3f:
-                print("Echo recieved sound with distance 3");
-                AudioSource2.PlayOneShot(recieveEchoSound3  );
-                break;
-
-            default:
-                print("Echo recieved sound with distance unkown");
-                AudioSource2.PlayOneShot(recieveEchoSoundDefault  );
-                break;
+            AudioSource1.PlayOneShot(recieveEchoSoundDefault);
+            AudioSource2.PlayOneShot(recieveEchoSoundDoor);
+        }
+        else
+        {
+            AudioSource2.PlayOneShot(recieveEchoSoundDefault);
         }
     }
 

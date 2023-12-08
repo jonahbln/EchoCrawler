@@ -29,9 +29,13 @@ public class EchoProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.gameObject.CompareTag("Wall"))
+        if (collision.collider.gameObject.CompareTag("Wall"))
         {
-            WallHit();
+            WallHit(false);
+        }
+        else if (collision.collider.gameObject.CompareTag("Door"))
+        {
+            WallHit(true);
         }
     }
 
@@ -43,9 +47,9 @@ public class EchoProjectile : MonoBehaviour
         }
     }
 
-    private void WallHit()
+    private void WallHit(bool door)
     {
-        soundController.PlayEchoResponse(Mathf.Round(timeSinceBirth * projSpeed));
+        soundController.PlayEchoResponse(door);
         EchoHandler.canEcho = true;
         PlayerController.canMove = true;
         Destroy(gameObject);

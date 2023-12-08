@@ -39,23 +39,23 @@ public class PlayerController : MonoBehaviour
                 {
                     GetComponent<SoundController>().PlayWallInteraction();
                 }
-                Invoke("EnableInput", .5f);
+                Invoke("EnableInput", .4f);
 
             }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
                 DisableInput();
                 GetComponent<SoundController>().PlayRotateLeft();
                 transform.Rotate(0, 0, 90);
-                Invoke("EnableInput", .5f);
+                Invoke("EnableInput", .4f);
 
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             {
                 DisableInput();
                 GetComponent<SoundController>().PlayRotateRight();
                 transform.Rotate(0, 0, -90);
-                Invoke("EnableInput", .5f);
+                Invoke("EnableInput", .4f);
 
             }
         }

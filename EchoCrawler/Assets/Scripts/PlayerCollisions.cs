@@ -7,7 +7,7 @@ public class PlayerCollisions : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Door"))
         {
             touchingWall = true;
         }
@@ -15,7 +15,7 @@ public class PlayerCollisions : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Door"))
         {
             touchingWall = false;
         }

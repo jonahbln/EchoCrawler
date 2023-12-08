@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
+using UnityEngine.UIElements;
+using Unity.VisualScripting;
 
 public class LevelManager : MonoBehaviour
 {
@@ -11,12 +13,13 @@ public class LevelManager : MonoBehaviour
     private float doorRotation;
     [SerializeField] private float playTime;
     [SerializeField] private GameObject doorPrefab;
-    private GameObject player;
+    [SerializeField]  private GameObject player;
     [SerializeField] private string LevelToLoad;
     private DoorController doorController;
     private SoundController soundController;
     private Vector3 startPosition = new Vector3(4.5f,0.5f,0.0f);
     private Quaternion startRotation = Quaternion.Euler(0f, 0f, 90f);
+    [SerializeField] PauseMenu pausePanel;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +55,8 @@ public class LevelManager : MonoBehaviour
 
         player.GetComponent<PlayerController>().enabled = true;
         player.GetComponent<EchoHandler>().enabled = true;
+
+        pausePanel = FindObjectOfType<PauseMenu>();
     }
 
     
@@ -60,6 +65,10 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         playTime += Time.deltaTime;
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause();
+        }
     }
 
     public void treasurePickup()
@@ -82,5 +91,36 @@ public class LevelManager : MonoBehaviour
     {
         print("Level lost in: " + playTime + " seconds!");
         soundController.PlayLoss();
+    }
+
+    public void Pause()
+    {
+        player.GetComponent<PlayerController>().enabled = false;
+        player.GetComponent<EchoHandler>().enabled = false;
+        pausePanel.Pause();
+        Time.timeScale = 0.0f;
+
+    }
+
+    public void Resume()
+    {
+        player.GetComponent<PlayerController>().enabled = true;
+        player.GetComponent<EchoHandler>().enabled = true;
+        pausePanel.Resume();
+        Time.timeScale = 1.0f;
+    }
+
+    public void ReturnToMainMenu()
+    {
+        Time.timeScale = 1.0f;
+        player.GetComponent<PlayerController>().enabled = true;
+        player.GetComponent<EchoHandler>().enabled = true;
+        Destroy(player);
+        SceneManager.LoadScene("TitleScene");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
