@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] Text levelTitle;
+    [SerializeField] Text escapeText;
+    [SerializeField] Image escapeImage;
     LevelManager levelManager;
 
     // Start is called before the first frame update
@@ -27,6 +29,8 @@ public class PauseMenu : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(true);
         }
         levelTitle.gameObject.SetActive(false);
+        escapeText.gameObject.SetActive(false);
+        escapeImage.gameObject.SetActive(false);
     }
 
     public void Resume()
@@ -37,6 +41,8 @@ public class PauseMenu : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(false);
         }
         levelTitle.gameObject.SetActive(true);
+        escapeText.gameObject.SetActive(true);
+        escapeImage.gameObject.SetActive(true);
     }
 
     public void MainMenu()

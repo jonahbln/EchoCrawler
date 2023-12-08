@@ -106,7 +106,6 @@ public class LevelManager : MonoBehaviour
     {
         player.GetComponent<PlayerController>().enabled = true;
         player.GetComponent<EchoHandler>().enabled = true;
-        pausePanel.Resume();
         Time.timeScale = 1.0f;
     }
 
